@@ -1,7 +1,6 @@
 {
     "name": "juniorfontenele/sail",
     "description": "A Laravel Sail's replacement",
-    "version": "1.0.0",
     "license": "MIT",
     "autoload": {
       "psr-4": {
