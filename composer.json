@@ -1,0 +1,28 @@
+{
+    "name": "juniorfontenele/sail",
+    "description": "A Laravel Sail's replacement",
+    "version": "1.0.0",
+    "license": "MIT",
+    "autoload": {
+      "psr-4": {
+        "JuniorFontenele\\Sail\\": "src/"
+      }
+    },
+    "authors": [
+      {
+        "name": "Junior Fontenele",
+        "email": "lcbfjr@gmail.com"
+      }
+    ],
+    "require": {
+      "php": "^8.0",
+      "laravel/sail": "^1.16"
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "JuniorFontenele\\Sail\\SailServiceProvider"
+        ]
+      }
+    }
+}
