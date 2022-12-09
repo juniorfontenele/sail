@@ -8,6 +8,7 @@ class InstallCommand extends SailInstallCommand
 {
     protected $signature = 'app:install
         {--with= : The services that should be included in the installation}
+        {--devcontainer : Create a .devcontainer configuration directory}
         {--dev : Use laravel\'s default dev webserver}';
 
     /**
