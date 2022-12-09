@@ -8,7 +8,7 @@ class InstallCommand extends SailInstallCommand
 {
     protected $signature = 'app:install
         {--with= : The services that should be included in the installation}
-        {--devcontainer : Create a .devcontainer configuration directory}';
+        {--dev : Use laravel\'s default dev webserver}';
 
     /**
      * Build the Docker Compose file.
@@ -37,7 +37,7 @@ class InstallCommand extends SailInstallCommand
                 return $collection->prepend('volumes:');
             })->implode("\n");
 
-        $dockerCompose = file_get_contents(__DIR__ . '/../../stubs/docker-compose.stub');
+        $dockerCompose = $this->option('dev') ? file_get_contents(__DIR__ . '/../../stubs/docker-compose-dev.stub') : file_get_contents(__DIR__ . '/../../stubs/docker-compose.stub');
 
         $dockerCompose = str_replace('{{depends}}', empty($depends) ? '' : '        '.$depends, $dockerCompose);
         $dockerCompose = str_replace('{{services}}', $stubs, $dockerCompose);
